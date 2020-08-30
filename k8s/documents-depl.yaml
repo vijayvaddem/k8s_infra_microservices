@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: documents-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: documents
+  template:
+    metadata:
+      labels:
+        app: documents
+    spec:
+      containers:
+        - name: posts
+          image: vijayvaddem/documents:0.0.1

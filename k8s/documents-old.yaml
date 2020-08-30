@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: documents
+spec:
+  containers:
+    - name: documents
+      image: vijayvaddem/documents:0.0.1 #Docker image file
