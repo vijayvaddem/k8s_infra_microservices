@@ -13,5 +13,18 @@ spec:
         app: documents
     spec:
       containers:
-        - name: posts
-          image: vijayvaddem/documents:0.0.1
+        - name: documents
+          image: vijayvaddem/documents
+---
+apiVersion: v1
+kind: Service #ClusterIP service type (default)
+metadata:
+  name: documents-clusterip-svc
+spec:
+  selector:
+    app: documents #type should go here. Default is ClusterIP
+  ports:
+    - name: documents
+      protocol: TCP
+      port: 4000
+      targetPort: 4000

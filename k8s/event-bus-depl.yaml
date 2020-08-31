@@ -17,12 +17,12 @@ spec:
           image: vijayvaddem/event-bus:latest
 ---
 apiVersion: v1
-kind: Service
+kind: Service #ClusterIP service type (default)
 metadata:
-  name: event-bus-srv
+  name: event-bus-svc
 spec:
   selector:
-    app: event-bus
+    app: event-bus #type should go here. Default is ClusterIP
   ports:
     - name: event-bus
       protocol: TCP
